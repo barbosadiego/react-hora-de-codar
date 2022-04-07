@@ -1,28 +1,21 @@
 import React from 'react';
-import HelloWorld from './Components/HelloWorld';
-import Frase from './Components/Frase';
-import SayMyName from './Components/SayMyName';
-import Pessoa from './Components/Pessoa';
-import List from './Components/List';
+// import HelloWorld from './Components/HelloWorld';
+// import Frase from './Components/Frase';
+// import SayMyName from './Components/SayMyName';
+// import Pessoa from './Components/Pessoa';
+// import List from './Components/List';
+import Evento from './Components/Evento';
 import './App.css';
+import Form from './Components/Form';
 
 const App = (props) => {
   const nome = 'Tino';
   return (
     <React.Fragment>
-      <HelloWorld />
-      <Frase />
-      <Frase />
-      <SayMyName nome="Diego" />
-      <SayMyName nome="Maria" />
-      <SayMyName nome={nome} />
-      <Pessoa 
-        nome='Diego'
-        idade='35'
-        profissao='Dev Web'
-        foto='https://via.placeholder.com/150'
-      />
-      <List />
+     <h1>Testando eventos</h1>
+     <Evento numero={1} />
+     <Evento numero={2} />
+     <Form />
     </React.Fragment>
   );
 };
