@@ -1,12 +1,24 @@
-import React from 'react'
+import React from 'react';
+import PropTypes from 'prop-types'
 
-const Item = (props) => {
+const Item = ({ marca, ano_lancamento }) => {
   return (
     <React.Fragment>
-      <li>{props.marca}</li>
-      <p>teste</p>
+      <li>
+        {marca} - {ano_lancamento}
+      </li>
     </React.Fragment>
-  )
+  );
+};
+
+Item.propTypes = {
+  marca: PropTypes.string.isRequired,
+  ano_lancamento: PropTypes.number
 }
 
-export default Item
+Item.defaultProps ={
+  marca: 'faltou a marca',
+  ano_lancamento: 0,
+}
+
+export default Item;
