@@ -11,6 +11,7 @@ const App = (props) => {
     <div>
       <HelloWorld />
       <Frase />
+      <Frase />
       <SayMyName nome="Diego" />
       <SayMyName nome="Maria" />
       <SayMyName nome={nome} />

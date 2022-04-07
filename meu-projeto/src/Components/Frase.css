@@ -1,0 +1,11 @@
+:local(.fraseContainer){
+  background-color: rgb(218, 33, 33);
+  padding: 20px;
+  border: 1px solid #111;
+}
+
+:local(.fraseContent){
+  color: #fff;
+  background-color: #333;
+  margin: 0;
+}
