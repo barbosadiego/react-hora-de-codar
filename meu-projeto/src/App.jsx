@@ -13,8 +13,7 @@ const App = (props) => {
   return (
     <React.Fragment>
      <h1>Testando eventos</h1>
-     <Evento numero={1} />
-     <Evento numero={2} />
+     <Evento />
      <Form />
     </React.Fragment>
   );

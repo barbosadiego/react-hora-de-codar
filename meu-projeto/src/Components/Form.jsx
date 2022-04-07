@@ -3,6 +3,7 @@ import React from 'react';
 const Form = (props) => {
   function cadastrarUsuario(e) {
     e.preventDefault();
+    console.log(name, password)
   }
   const [name, setName] = React.useState(null)
   const [password, setPassword] =  React.useState(null)
