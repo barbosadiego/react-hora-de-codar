@@ -1,0 +1,11 @@
+:local(.container){
+  border: 1px solid black;
+}
+
+:local(.container ul){
+  padding: 0;
+}
+
+:local(.container ul li){
+  list-style: none;
+}
