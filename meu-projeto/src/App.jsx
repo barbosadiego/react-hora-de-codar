@@ -1,6 +1,8 @@
 import React from 'react';
 import './App.css';
-import OutraLista from './Components/OutraLista';
+import Saudacao from './Components/Saudacao';
+import SeuNome from './Components/SeuNome';
+// import OutraLista from './Components/OutraLista';
 // import HelloWorld from './Components/HelloWorld';
 // import Frase from './Components/Frase';
 // import SayMyName from './Components/SayMyName';
@@ -11,14 +13,13 @@ import OutraLista from './Components/OutraLista';
 // import Condicional from './Components/Condicional';
 
 const App = (props) => {
-
-  const meusItens = ['React', 'Vue', 'Angular']
+  const [nome, setNome] = React.useState();
 
   return (
     <React.Fragment>
-     <h1>Renderização de listas</h1>
-     <OutraLista itens={meusItens} />
-     <OutraLista itens={[]} />
+      <h1>State Lift</h1>
+      <SeuNome setNome={setNome} />
+      <Saudacao nome={nome} />
     </React.Fragment>
   );
 };
