@@ -1,0 +1,14 @@
+:local(.social_list){
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+:local(.social_list li){
+  margin: 0 1rem;
+}
+
+:local(.social_list svg){
+  font-size: 1.5rem;
+  cursor: pointer;
+}
