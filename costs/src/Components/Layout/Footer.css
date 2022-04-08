@@ -1,0 +1,33 @@
+:local(.footer){
+  background-color: #222;
+  color: #fff;
+  padding: 3em;
+  text-align: center;
+}
+:local(.social_list){
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+
+:local(.social_list li){
+  margin: 0 1em;
+}
+
+:local(.social_list li:hover){
+  color: #ffbb33;
+}
+
+:local(.social_list svg){
+  cursor: pointer;
+  font-size: 1.5em;
+}
+
+:local(.copy_right){
+  margin-top: 2em;
+}
+
+:local(.copy_right span){
+  font-weight: bold;
+  color: #ffbb33;
+}

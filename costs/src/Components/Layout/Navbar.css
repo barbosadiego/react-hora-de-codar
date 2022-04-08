@@ -1,0 +1,21 @@
+:local(.navbar){
+  background-color: #222;
+  padding: 1em;
+}
+:local(.list){
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+:local(.item){
+  margin-right: 1em;
+}
+
+:local(.item a){
+  color: #fff;
+  text-decoration: none;
+}
+
+:local(.item a:hover){
+  color: #ffbb33;
+}
