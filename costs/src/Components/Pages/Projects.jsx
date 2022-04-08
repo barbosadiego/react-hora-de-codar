@@ -3,7 +3,7 @@ import React from 'react'
 const Projects = (props) => {
   return (
     <div>
-      dafasd
+      <h1>Projects</h1>
     </div>
   )
 }
