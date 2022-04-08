@@ -1,0 +1,20 @@
+:local(.container){
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+:local(.min-height){
+  min-height: 75vh;
+}
+
+:local(.start){
+  justify-content: flex-start;
+}
+
+:local(.column){
+  flex-direction: column;
+  justify-content: flex-start;
+}
