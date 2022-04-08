@@ -2,10 +2,18 @@ body{
   padding: 50px;
   background-color: #444;
   color: whitesmoke;
-  text-align: center;
+}
+
+*{
+  list-style: none;
+  padding: 0;
 }
 
 p{
-  background-color: #999;
   padding: 10px;
+}
+
+a{
+  color: white;
+  text-decoration: none;
 }

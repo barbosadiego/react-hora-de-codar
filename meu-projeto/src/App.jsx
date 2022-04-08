@@ -1,7 +1,13 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
-import Saudacao from './Components/Saudacao';
-import SeuNome from './Components/SeuNome';
+import Empresa from './Pages/Empresa';
+import Contato from './Pages/Contato';
+import Home from './Pages/Home';
+import Navbar from './Components/layout/Navbar';
+import Footer from './Components/layout/Footer';
+// import Saudacao from './Components/Saudacao';
+// import SeuNome from './Components/SeuNome';
 // import OutraLista from './Components/OutraLista';
 // import HelloWorld from './Components/HelloWorld';
 // import Frase from './Components/Frase';
@@ -12,15 +18,18 @@ import SeuNome from './Components/SeuNome';
 // import Form from './Components/Form';
 // import Condicional from './Components/Condicional';
 
-const App = (props) => {
-  const [nome, setNome] = React.useState();
+const App = () => {
 
   return (
-    <React.Fragment>
-      <h1>State Lift</h1>
-      <SeuNome setNome={setNome} />
-      <Saudacao nome={nome} />
-    </React.Fragment>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path='/' element={<Home />}></Route>
+        <Route path='/empresa' element={<Empresa />}></Route>
+        <Route path='/contato' element={<Contato />}></Route>
+      </Routes>
+      <Footer />
+    </Router>
   );
 };
 

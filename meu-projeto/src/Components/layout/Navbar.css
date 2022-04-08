@@ -1,0 +1,7 @@
+:local(.list){
+  display: flex;
+}
+
+:local(.item){
+ margin-right: 1rem; 
+}
