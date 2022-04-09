@@ -5,6 +5,7 @@ import Contact from './Components/Pages/Contact';
 import Home from './Components/Pages/Home';
 import NewProject from './Components/Pages/NewProject';
 import Projects from './Components/Pages/Projects';
+import Project from './Components/Pages/Project';
 
 import Container from './Components/Layout/Container';
 import Navbar from './Components/Layout/Navbar';
@@ -21,6 +22,7 @@ const App = (props) => {
             <Route path="/company" element={<Company />}></Route>
             <Route path="/contact" element={<Contact />}></Route>
             <Route path="/newproject" element={<NewProject />}></Route>
+            <Route path="/project/:id" element={<Project />}></Route>
         </Routes>
       </Container>
       <Footer />
