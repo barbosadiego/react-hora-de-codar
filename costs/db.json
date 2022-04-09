@@ -49,7 +49,7 @@
       "budget": "567685",
       "category": {
         "id": "3",
-        "name": "Desgin"
+        "name": "Design"
       },
       "cost": 0,
       "services": [],
@@ -60,11 +60,22 @@
       "budget": "21",
       "category": {
         "id": "3",
-        "name": "Desgin"
+        "name": "Design"
       },
       "cost": 0,
       "services": [],
       "id": 6
+    },
+    {
+      "name": "novo",
+      "budget": "678",
+      "category": {
+        "id": "1",
+        "name": "Infra"
+      },
+      "cost": 0,
+      "services": [],
+      "id": 7
     }
   ],
   "categories": [
@@ -78,7 +89,7 @@
     },
     {
       "id": 3,
-      "name": "Desgin"
+      "name": "Design"
     },
     {
       "id": 4,
