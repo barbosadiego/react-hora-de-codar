@@ -23,6 +23,7 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  
 }
 :local(.btn){
   background-color: #222;
@@ -38,6 +39,6 @@
   background-color: #ffbb33;
   color: #222;
 }
-:local(.project_info){
+:local(.project_form){
   width: 100%;
 }

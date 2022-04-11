@@ -10,6 +10,7 @@ const Project = (props) => {
   const { id } = useParams();
   const [project, setProject] = React.useState([]);
   const [showProjectForm, setShowProjectForm] = React.useState(false);
+  const [showServiceForm, setShowServiceForm] = React.useState(false);
   const [message, setMessage] = React.useState();
   const [type, setType] = React.useState();
 
@@ -28,6 +29,7 @@ const Project = (props) => {
   }, [id]);
 
   function editPost(project) {
+    setMessage('')
     if (project.budget < project.cost) {
       setMessage('O orçamento não pode ser menor rque o custo do projeto!');
       setType('error');
@@ -53,6 +55,10 @@ const Project = (props) => {
 
   function toggleProjectForm() {
     setShowProjectForm(!showProjectForm);
+  }
+
+  function toggleServiceForm() {
+    setShowServiceForm(!showServiceForm);
   }
 
   return (
@@ -88,6 +94,19 @@ const Project = (props) => {
                 </div>
               )}
             </div>
+            <div className={styles.service_form_container}>
+              <h2>Adidione um serviço:</h2>
+              <button className={styles.btn} onClick={toggleServiceForm}>
+                {!showServiceForm ? 'Adicionar serviço' : 'Fechar'}
+              </button>
+              <div className={styles.project_form}>
+                {showServiceForm && <div>formulário do serviço</div>}
+              </div>
+            </div>
+            <h2>Serviços</h2>
+            <Container>
+              <p>Itens de Serviços</p>
+            </Container>
           </Container>
         </div>
       ) : (
