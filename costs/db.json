@@ -7,8 +7,27 @@
         "id": "1",
         "name": "Infra"
       },
-      "cost": 0,
-      "services": [],
+      "cost": 400,
+      "services": [
+        {
+          "name": "Novo serviço",
+          "cost": "233",
+          "description": "isso",
+          "id": "15c4d028-5a13-4384-b783-c0352f0a2e58"
+        },
+        {
+          "name": "Teste atualizado",
+          "cost": "100",
+          "description": "aaqui",
+          "id": "1173877a-f1d9-4215-9d09-19be6dea402f"
+        },
+        {
+          "name": "Teste atualizado 2",
+          "cost": "67",
+          "description": "aaqui dfsafsda",
+          "id": "0d43e174-f793-4de5-b1ae-8fd379b0b03c"
+        }
+      ],
       "id": 1
     }
   ],

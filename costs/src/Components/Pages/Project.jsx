@@ -5,6 +5,8 @@ import Loading from '../Layout/Loading';
 import Container from '../Layout/Container';
 import ProjectForm from '../Project/ProjectForm';
 import Message from '../Layout/Message';
+import ServiceForm from '../Service/ServiceForm';
+import { parse, v4 as uuidv4 } from 'uuid';
 
 const Project = (props) => {
   const { id } = useParams();
@@ -29,11 +31,11 @@ const Project = (props) => {
   }, [id]);
 
   function editPost(project) {
-    setMessage('')
+    setMessage('');
     if (project.budget < project.cost) {
       setMessage('O orçamento não pode ser menor rque o custo do projeto!');
       setType('error');
-      return false
+      return false;
     }
 
     fetch(`http://localhost:5000/project/${project.id}`, {
@@ -49,6 +51,38 @@ const Project = (props) => {
         setShowProjectForm(false);
         setMessage('Projeto atualizado!');
         setType('success');
+      })
+      .catch((error) => console.log(error));
+  }
+
+  function createService() {
+    setMessage('')
+    //last service
+    const lastService = project.services[project.services.length - 1];
+    lastService.id = uuidv4();
+    const lastServiceCost = lastService.cost;
+    const newCost = parseFloat(project.cost) + parseFloat(lastServiceCost);
+    //maximum value validation
+    if (newCost > parseFloat(project.budget)) {
+      setMessage('Orçamento ultrapassado, verifique o valor do serviço.');
+      setType('error');
+      project.services.pop();
+      return false;
+    }
+    //add service cost to project total cost
+    project.cost = newCost;
+    //update project
+    fetch(`http://localhost:5000/project/${project.id}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(project),
+    })
+      .then((resp) => resp.json())
+      .then((data) => {
+        //exibir os serviços
+        console.log(data)
       })
       .catch((error) => console.log(error));
   }
@@ -99,12 +133,18 @@ const Project = (props) => {
               <button className={styles.btn} onClick={toggleServiceForm}>
                 {!showServiceForm ? 'Adicionar serviço' : 'Fechar'}
               </button>
-              <div className={styles.project_form}>
-                {showServiceForm && <div>formulário do serviço</div>}
+              <div className={styles.project_info}>
+                {showServiceForm && (
+                  <ServiceForm
+                    handleSubmit={createService}
+                    textBtn="Adicionar Serviço"
+                    projectData={project}
+                  />
+                )}
               </div>
             </div>
             <h2>Serviços</h2>
-            <Container>
+            <Container customClass="start">
               <p>Itens de Serviços</p>
             </Container>
           </Container>

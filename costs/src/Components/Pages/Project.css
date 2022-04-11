@@ -39,6 +39,6 @@
   background-color: #ffbb33;
   color: #222;
 }
-:local(.project_form){
+:local(.project_info){
   width: 100%;
 }
