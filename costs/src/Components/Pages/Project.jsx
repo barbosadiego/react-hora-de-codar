@@ -6,11 +6,13 @@ import Container from '../Layout/Container';
 import ProjectForm from '../Project/ProjectForm';
 import Message from '../Layout/Message';
 import ServiceForm from '../Service/ServiceForm';
+import ServiceCard from '../Service/ServiceCard';
 import { parse, v4 as uuidv4 } from 'uuid';
 
 const Project = (props) => {
   const { id } = useParams();
   const [project, setProject] = React.useState([]);
+  const [services, setServices] = React.useState([]);
   const [showProjectForm, setShowProjectForm] = React.useState(false);
   const [showServiceForm, setShowServiceForm] = React.useState(false);
   const [message, setMessage] = React.useState();
@@ -25,7 +27,10 @@ const Project = (props) => {
         },
       })
         .then((resp) => resp.json())
-        .then((data) => setProject(data))
+        .then((data) => {
+          setProject(data);
+          setServices(data.services);
+        })
         .catch((error) => console.log(error));
     }, 300);
   }, [id]);
@@ -56,7 +61,7 @@ const Project = (props) => {
   }
 
   function createService() {
-    setMessage('')
+    setMessage('');
     //last service
     const lastService = project.services[project.services.length - 1];
     lastService.id = uuidv4();
@@ -81,10 +86,13 @@ const Project = (props) => {
     })
       .then((resp) => resp.json())
       .then((data) => {
-        //exibir os serviços
-        console.log(data)
+        setShowServiceForm(false)
       })
       .catch((error) => console.log(error));
+  }
+
+  function removeService(){
+
   }
 
   function toggleProjectForm() {
@@ -145,7 +153,18 @@ const Project = (props) => {
             </div>
             <h2>Serviços</h2>
             <Container customClass="start">
-              <p>Itens de Serviços</p>
+              {services.length > 0 &&
+                services.map(service => (
+                  <ServiceCard 
+                    id={service.id}
+                    name={service.name}
+                    cost={service.cost}
+                    key={service.id}
+                    handleRemove={removeService}
+                  />
+                ))
+              }
+              {services.length === 0 && <p>Não há serviços cadastrados</p>}
             </Container>
           </Container>
         </div>

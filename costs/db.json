@@ -7,7 +7,7 @@
         "id": "1",
         "name": "Infra"
       },
-      "cost": 400,
+      "cost": 778,
       "services": [
         {
           "name": "Novo serviço",
@@ -26,9 +26,32 @@
           "cost": "67",
           "description": "aaqui dfsafsda",
           "id": "0d43e174-f793-4de5-b1ae-8fd379b0b03c"
+        },
+        {
+          "name": "dev php",
+          "cost": "344",
+          "description": "isso",
+          "id": "acfd9d0c-0060-449b-bd5a-c54661ac7224"
+        },
+        {
+          "name": "dev",
+          "cost": "34",
+          "description": "dsfdsaf",
+          "id": "b690982e-aaf0-421f-8665-4bc28d12fc6c"
         }
       ],
       "id": 1
+    },
+    {
+      "name": "Serviço 2",
+      "budget": "1000",
+      "category": {
+        "id": "3",
+        "name": "Design"
+      },
+      "cost": 0,
+      "services": [],
+      "id": 2
     }
   ],
   "categories": [
